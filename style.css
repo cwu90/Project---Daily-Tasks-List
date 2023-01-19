@@ -1,0 +1,215 @@
+:root {
+  --clr-bg-body: hsla(0, 0%, 100%, 0.979);
+  --clr-bg-app: #6463c1;
+  --clr-accent-one: #9086e7;
+  --clr-accent-two: #efeefc;
+  --clr-accent-three: #4a4893;
+  --clr-text-one: #fcfaff;
+  --clr-text-two: #151426;
+  --clr-text-three: #525252;
+  --ff-primary: 'Raleway', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-primary);
+  background-color: var(--clr-bg-body);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 350px;
+  min-width: 320px;
+  min-height: 400px;
+  background: var(--clr-bg-app);
+  border-radius: 15px;
+  box-shadow: rgba(22, 22, 22, 0.2) 0px 2px 8px 0px;
+}
+
+.top h1 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--clr-text-one);
+}
+
+.plates {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+li {
+  box-shadow: rgba(22, 22, 22, 0.2) 0px 2px 8px 0px;
+  height: 2.5rem;
+  width: 100%;
+  text-align: center;
+
+  border-radius: 9px;
+  background-color: var(--clr-accent-two);
+  font-size: 0.9rem;
+  color: var(--clr-text-two);
+  font-weight: bold;
+  overflow: hidden;
+  display: flex;
+}
+
+li input {
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+li button {
+  color: var(--clr-text-two);
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0, 1);
+  transform-origin: left center;
+  transition: all 0.2s linear 0s;
+  text-indent: 0;
+}
+
+li:hover button {
+  text-indent: 10px;
+  transform: scale(1, 1);
+}
+
+.disappear {
+  /* visibility: hidden; */
+  transform: translateX(10rem);
+  transition: all 0.3s linear 0s;
+  opacity: 0;
+}
+
+li label {
+  margin-block: auto;
+}
+
+.add-items {
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+}
+.add-items-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.add-items-wrapper:hover > input {
+  background-color: var(--clr-text-one);
+}
+
+.add-items-wrapper:focus > input {
+  background-color: var(--clr-text-one);
+}
+
+.add-items-wrapper:hover > ::placeholder {
+  color: var(--clr-text-two);
+}
+
+.add-items-wrapper:focus > ::placeholder {
+  color: var(--clr-text-two);
+}
+
+.add-items input {
+  border-radius: 9px;
+  border-style: none;
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  background-color: var(--clr-accent-three);
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.add-items input::placeholder {
+  color: white;
+  font-weight: bold;
+}
+
+.submit-button {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  height: 34px;
+  right: 10px;
+  margin: auto;
+  background-color: var(--clr-accent-one);
+  border-radius: 9px;
+  width: 40px;
+  border: none;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  color: var(--clr-accent-two);
+}
+
+.submit-button:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
